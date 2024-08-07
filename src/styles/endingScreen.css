@@ -1,0 +1,69 @@
+.EndingScreen {
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    background-image: linear-gradient(#e60000, white, white, white, black);
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackTypes {
+    display: flex;
+    gap: 350px;
+    position: relative;
+    bottom: 65px;
+}
+
+.redTypes {
+    display: flex;
+    gap: 350px;
+    position: relative;
+    top: 75px;
+}
+
+
+.btnsContainer {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.playAgainBtn {
+    background-color: #e60000;
+    border: none;
+    transition: 0.2s ease-in-out;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.playAgainBtn:hover {
+    background-color: black;
+    color: #e60000;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.logOutBtn {
+    border: 3px solid black;
+    background: none;
+    transition: 0.2s ease-in-out;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.logOutBtn:hover {
+    background-color: black;
+    color: #e60000;
+    cursor: pointer;
+    transform: scale(1.1);
+}
