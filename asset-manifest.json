@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/War-Card-Game/static/css/main.e738690b.css",
+    "main.js": "/War-Card-Game/static/js/main.a72e649f.js",
+    "static/media/swords.png": "/War-Card-Game/static/media/swords.9c14d12bcc5b365f0055.png",
+    "static/media/diamond.png": "/War-Card-Game/static/media/diamond.8599256461206bd678c8.png",
+    "static/media/spades.png": "/War-Card-Game/static/media/spades.c668c5e08349eddaa268.png",
+    "static/media/hearts.png": "/War-Card-Game/static/media/hearts.b5224b4dec9293b4fd46.png",
+    "static/media/clover.png": "/War-Card-Game/static/media/clover.4eaf8ae69d77f36bfc51.png",
+    "index.html": "/War-Card-Game/index.html",
+    "main.e738690b.css.map": "/War-Card-Game/static/css/main.e738690b.css.map",
+    "main.a72e649f.js.map": "/War-Card-Game/static/js/main.a72e649f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e738690b.css",
+    "static/js/main.a72e649f.js"
+  ]
+}
