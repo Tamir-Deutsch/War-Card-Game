@@ -1,0 +1,28 @@
+.GameBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.GameBoard .card {
+    margin-left: 50px
+}
+
+.hitBtn {
+    width: 200px;
+    height: 40px;
+    background-color: #e60000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.hitBtn:hover {
+    background-color: black;
+    color: #e60000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

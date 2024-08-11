@@ -1,0 +1,302 @@
+/* Display on mobile */
+@media (max-width:768px) {
+    h1 {
+        font-size: 22px;
+        margin-right: 65px;
+        position: relative;
+        bottom: 100px;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .gameLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        bottom: 85px;
+        animation: growing 0.75s ease-in-out;
+    }
+
+    @keyframes growing {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .gameLogo .swords {
+        position: relative;
+        right: 40px;
+    }
+
+    .gameLogo .heart {
+        position: relative;
+        bottom: 75px;
+        left: 162px;
+    }
+
+    .gameLogo .diamond {
+        position: relative;
+        top: 110px;
+        left: 105px;
+    }
+
+    .gameLogo .clover {
+        position: relative;
+        right: 285px;
+    }
+
+    .gameLogo .spade {
+        position: relative;
+        right: 116px;
+    }
+
+    .userNameDiv {
+        opacity: 0;
+        animation: showInput 0.5s ease-in 0.75s forwards;
+        position: relative;
+        bottom: 95px;
+    }
+
+    @keyframes showInput {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    input {
+        width: 260px;
+        height: 50px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 80px;
+    }
+
+    .userName::before {
+        content: "*";
+        color: crimson;
+        font-size: 20px;
+        padding-right: 10px;
+    }
+
+    .userNameError {
+        position: relative;
+        bottom: 75px;
+        right: 35px;
+        font-size: 14px;
+        color: crimson;
+    }
+
+    .buttonsContainer {
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        position: relative;
+        right: 30px;
+        bottom: 50px;
+        animation: showing 0.5s ease-in 1.5s forwards;
+    }
+
+    @keyframes showing {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .play {
+        width: 122px;
+        height: 50px;
+        background-color: #e60000;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: medium;
+        transition: 0.2s ease-in-out;
+    }
+
+    .scoreBoardBtn {
+        width: 122px;
+        height: 50px;
+        background: none;
+        border: 3px solid black;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: medium;
+        transition: 0.2s ease-in-out;
+        color: black;
+    }
+}
+
+/* Display on desktop */
+@media (min-width:1200px) {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .gameLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: growing 0.75s ease-in-out;
+    }
+
+    @keyframes growing {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .gameLogo .heart {
+        position: relative;
+        bottom: 100px;
+        left: 277px;
+    }
+
+    .gameLogo .diamond {
+        position: relative;
+        top: 150px;
+        left: 195px;
+    }
+
+    .gameLogo .clover {
+        position: relative;
+        right: 327px;
+    }
+
+    .gameLogo .spade {
+        position: relative;
+        right: 120px;
+    }
+
+    .userNameDiv {
+        opacity: 0;
+        animation: showInput 0.5s ease-in 0.75s forwards;
+    }
+
+    @keyframes showInput {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    input {
+        width: 350px;
+        height: 40px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .userName::before {
+        content: "*";
+        color: crimson;
+        font-size: 20px;
+        padding-right: 10px;
+    }
+
+    .userNameError {
+        position: relative;
+        top: 15px;
+        font-size: 16px;
+        color: crimson;
+        margin-left: 20px;
+    }
+
+    .buttonsContainer {
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20px;
+        animation: showing 0.5s ease-in 1.5s forwards;
+    }
+
+    @keyframes showing {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .play {
+        width: 365px;
+        height: 40px;
+        background-color: #e60000;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: medium;
+        margin-left: 132px;
+        margin-top: 15px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .play:hover {
+        background-color: black;
+        cursor: pointer;
+        color: #e60000;
+         transform: scale(1.1);
+    }
+
+    .scoreBoardBtn {
+        width: 365px;
+        height: 40px;
+        background: none;
+        border: 3px solid black;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: medium;
+        transition: 0.2s ease-in-out;
+        margin-left: 13px;
+        color: black;
+    }
+
+    .scoreBoardBtn:hover {
+        background-color: black;
+        border: none;
+        color: #e60000;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
