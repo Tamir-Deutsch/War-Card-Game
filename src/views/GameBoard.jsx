@@ -17,7 +17,6 @@ export default function GameBoard(props) {
     const [playerDeck, setPlayerDeck] = useState(firstDeck);
     const [computerDeck, setComputerDeck] = useState(secondDeck);
     const [game, setGame] = useState(initialGameState);
-    const [isHitBtnTouch, setIsHitBtnTouch] = useState(false);
 
     useEffect(() => {
         // Initialize with back cards
@@ -27,14 +26,6 @@ export default function GameBoard(props) {
             computerCard: 1,  // Back card 2 for computer
         }));
     }, []);
-
-    const enterHitBtnTouch = () => {
-        setIsHitBtnTouch(true);
-    }
-
-    const exitHitBtnTouch = () => {
-        setIsHitBtnTouch(false);
-    }
 
     const doTurn = () => {
         if (playerDeck.length === 0 || computerDeck.length === 0) {
@@ -143,11 +134,7 @@ export default function GameBoard(props) {
                 {props.player.name} || Wins: {game.playerWins}
             </h2>
 
-            <button style={{
-                backgroundColor: isHitBtnTouch ? 'black' : '',
-                color: isHitBtnTouch ? '#e60000' : ''
-            }} className="hitBtn" onClick={doTurn} onTouchStart={enterHitBtnTouch}
-                onTouchEnd={exitHitBtnTouch}>
+            <button className="hitBtn" onClick={doTurn} >
                 Hit</button>
         </div>
     );

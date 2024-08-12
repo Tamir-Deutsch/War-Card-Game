@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ScoreBoard from '../components/ScoreBoard';
 import '../styles/login.css';
 // import GameBoard from './GameBoard';
@@ -13,6 +13,7 @@ export default function Login(props) {
     const [isErrorShown, setIsErrorShown] = useState(false);
     const [isScoreBoardClicked, setIsScoreBoardClicked] = useState(false);
     const [isStartBtnTouched, setIsStartBtnTouched] = useState(false);
+    const [isStartBtndDisabled, setIsStartBtndDisabled] = useState(true);
     const [isScoreboardBtnTouched, setIsScoreboardBtnTouched] = useState(false);
 
     const validation = () => {
@@ -22,6 +23,14 @@ export default function Login(props) {
             setIsErrorShown(true);
         }
     }
+
+    useEffect(() => {
+        if (name.length < 1) {
+            setIsStartBtndDisabled(true);
+        } else {
+            setIsStartBtndDisabled(false);
+        }
+    }, [name])
 
     //Close the score board
     const closeBtn = () => {
@@ -92,9 +101,11 @@ export default function Login(props) {
                 Please enter a valid name with at least 2 characters</div> : <></>}
 
             <div className='buttonsContainer'>
-                <button style={{
-                    backgroundColor: isStartBtnTouched ? 'black' : '',
-                    color: isStartBtnTouched ? '#e60000' : ''
+                <button disabled={isStartBtndDisabled} style={{
+                    backgroundColor: isStartBtndDisabled ? 'lightgray' : (isStartBtnTouched ? '' : '#e60000'),
+                    color: isStartBtndDisabled ? 'gray' : (isStartBtnTouched ? '' : 'black'),
+                    cursor: isStartBtndDisabled ? 'default' : 'pointer',
+                    transform: isStartBtndDisabled ? 'none' : ''
                 }} className='play' onClick={validation} onTouchStart={enterStartBtnTouch}
                     onTouchEnd={exitStartBtnTouch}>
                     Start game
