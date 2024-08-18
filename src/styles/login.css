@@ -1,5 +1,11 @@
 /* Display on mobile */
 @media (max-width:768px) {
+    .loginContainer {
+        position: absolute;
+        height: 50%;
+        left: 17px;
+    }
+
     h1 {
         font-size: 22px;
         margin-right: 65px;
@@ -150,6 +156,13 @@
     }
 }
 
+/*On landscape mode - the user should rotate the screen */
+@media(orientation: landscape) and (max-width: 1024px) {
+    .loginContainer {
+        display: none;
+    }
+}
+
 /* Display on desktop */
 @media (min-width:1200px) {
     .overlay {
@@ -276,7 +289,7 @@
         background-color: black;
         cursor: pointer;
         color: #e60000;
-         transform: scale(1.1);
+        transform: scale(1.1);
     }
 
     .scoreBoardBtn {

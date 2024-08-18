@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Login from './views/Login';
 import GameBoard from './views/GameBoard';
 import EndingScreen from './views/EndingScreen';
+import screenRotation from './images/screenRotation.png';
 
 const initialPlayerState = {
     name: '',
@@ -22,6 +23,29 @@ function App() {
     const [player, setPlayer] = useState(initialPlayerState);
     const [players, setPlayers] = useState([]);
     const [currentScreen, setCurrentScreen] = useState(pages.login);
+    const [isLandscape, setIsLandscape] = useState(false);
+    // const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleOrientationChange = () => {
+            const isMobileDevice = window.matchMedia("only screen and (max-width: 1024px)").matches;
+            const isLandscapeMode = window.screen.orientation && window.screen.orientation.type
+                ? window.screen.orientation.type.includes('landscape')
+                : false;
+            setIsLandscape(isLandscapeMode && isMobileDevice);
+        };
+
+        // Initial check
+        handleOrientationChange();
+
+        // Add event listener
+        window.addEventListener('orientationchange', handleOrientationChange);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('orientationchange', handleOrientationChange);
+        };
+    }, []);
 
     const onStartGame = (playerName = player.name) => {
         if (player.name === '') {
@@ -70,9 +94,16 @@ function App() {
         }
     };
 
-    return <div className="App">
-        {getCurrentScreen()}
-    </div>;
+    return (
+        <div className="App">
+            {getCurrentScreen()}
+            {isLandscape ? <div>
+                <img className="rotateScreenImg" src={screenRotation} alt="Rotate your screen" />
+                <h2 className="rotateScreenText">Rotate your screen</h2>
+            </div> : <></>
+            }
+        </div>
+    );
 }
 
 export default App;

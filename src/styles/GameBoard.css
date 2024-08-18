@@ -26,3 +26,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+/*On landscape mode - the user should rotate the screen */
+@media(orientation: landscape) and (max-width: 1024px) {
+    .GameBoard {
+        display: none;
+    }
+}

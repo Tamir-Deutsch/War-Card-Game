@@ -42,7 +42,7 @@ export default function Login(props) {
         setIsStartBtnTouched(true);
     }
 
-    //when the user removes hos finger
+    //when the user removes his finger
     const exitStartBtnTouch = () => {
         setIsScoreboardBtnTouched(false);
     }
@@ -52,7 +52,7 @@ export default function Login(props) {
         setIsScoreboardBtnTouched(true);
     }
 
-    //when the user removes hos finger
+    //when the user removes his finger
     const exitScoreboardBtnTouch = () => {
         setIsScoreboardBtnTouched(false);
     }
